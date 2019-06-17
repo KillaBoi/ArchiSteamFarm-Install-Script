@@ -24,9 +24,9 @@ Green_background_prefix="\\033[42;37m"
 Font_color_suffix="\\033[0m"
 
 # notification information
-Info="${Green}[信息]${Font}"
+Info="${Green}[INFO]${Font}"
 OK="${Green}[OK]${Font}"
-Error="${Red}[错误]${Font}"
+Error="${Red}[ERROR]${Font}"
 
 # files/floder path
 ARCHISTEAMFARM_FILES_DIR="/opt/ArchiSteamFarm"
@@ -39,9 +39,9 @@ ASF_VERSION="3.3.0.3"
 
 Is_root() {
   if [ "$(id -u)" == 0 ]; then
-    echo -e "${OK} ${GreenBG} 当前用户是root用户，进入安装流程 ${Font} "
+    echo -e "${OK} ${GreenBG} The current user IS the root user and the installation can continue. ${Font} "
   else
-    echo -e "${Error} ${RedBG} 当前用户不是root用户，请使用${Green_background_prefix} sudo su ${Font_color_suffix}来获取临时ROOT权限（执行后会提示输入当前账号的密码） ${Font}"
+    echo -e "${Error} ${RedBG} The current user IS NOT root.${Green_background_prefix} Please use 'sudo su' ${Font_color_suffix}to continue with the installation process. ${Font}"
     exit 1
   fi
 }
